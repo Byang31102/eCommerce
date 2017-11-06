@@ -1,0 +1,176 @@
+<doctype!>
+<html>
+	<head>
+		<title> Buytel </title>
+			<style>
+			dropbtn {
+			background-color: #4CAF50;
+			color: white;
+			padding: 16px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+			}
+			
+			.dropbtn:hover, .dropbtn:focus {
+			background-color: green;
+			}
+			
+			.dropdown {
+			position: relative;
+			display: inline-block;
+			}
+			
+			.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			overflow: auto;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+			}
+			
+			.dropdown-content a {
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			}
+			
+			.dropdown a:hover {background-color: blue}
+			
+			.show {display:block;}
+			
+			
+			img {width:300px}
+			input{width:50px}
+			h1 {color:red;}
+			body{background-color: yellow;}
+				
+				
+			</style>
+			<script>
+			function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+			function Money(){
+			var Output = document.getElementById("Output");
+			var Qty1 = document.getElementById("Qty1");
+			var Qty2 = document.getElementById("Qty2");
+			var Qty3 = document.getElementById("Qty3");
+			var Rprice1 = document.getElementById("Rprice1");
+			var Rprice2 = document.getElementById("Rprice2");
+			var Rprice3 = document.getElementById("Rprice3");
+			var Customer = parseFloat(Rprice1.value)*parseFloat(Qty1.value)+ parseFloat(Rprice2.value)*parseFloat(Qty2.value)+ parseFloat(Rprice3.value)*parseFloat(Qty3.value);
+			var Cost = parseFloat(Wprice1.value)*parseFloat(Qty1.value)+ parseFloat(Wprice2.value)*parseFloat(Qty2.value)+ parseFloat(Wprice3.value)*parseFloat(Qty3.value);
+			var tax1 = Customer*(0.0875)
+			var item = parseFloat(Qty1.value)+ parseFloat(Qty2.value)+ parseFloat(Qty3.value);
+			var bought = parseFloat(Rprice1.value);
+			var tax2 = bought*0.0875
+			var Shipping = 25
+			var retail = bought + tax2 + Shipping 
+			var profit = Customer - Cost;
+			if (bought <= 100){
+				Shipping = 25;
+			}
+			else if (bought >= 100 && bought < 200){
+				Shipping = 10;
+			}
+			else if (bought >=200){
+				Shipping = 0;
+			}
+			var info = "";
+			info += "Customer"+"<hr>";
+			info += "<hr> " + "<br>";
+			info += "Subtotal: " + bought +"<br>";
+			info += "Tax: " + tax2 +"<br>";
+			info += "Shipping: " + Shipping +"<br>";
+			info += "<hr> " + "<br>";
+			info += "total: " + retail+ "<br>";
+			info += "Company"+"<hr>";
+			info += "<hr> " + "<br>";
+			info += "Earned: " + Customer +"<br>";
+			info += "Cost: " + Cost +"<br>";
+			info += "<hr> " + "<br>";
+			info += "Profit: " + profit + "<br>";
+			
+			output.innerHTML = info;
+			
+			}
+			
+			</script>
+	</head>
+	<body>
+	<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Home</a>
+    <a href="#">Shopping</a>
+    <a href="#">Info</a>
+  </div>
+</div> 
+	
+	<div>
+		<h1> Toyota Camery 2007</h1>
+		<img src= "toyota.jpg"><br>
+		<span> $5,000 </span>
+		<p>A reliable used car. Has gotten better over time. 10 years, hasn't changed a bit. Last deal, hurry!</p>
+	
+		Quantity:<input type = "text" id = "Qty1"> <br>
+		
+		
+		<h1> Toy Yoda</h1><br>
+		<img src= "yoda.jpg"><br>
+		<span> $5 </span>
+		<p>A well worthed toy that exceeds its value. Will not regret your purchase?</p>
+		
+		
+		Quantity:<input type = "text" id = "Qty2"> <br>
+		
+		<h1> Xbox 1</h1><br>
+		<img src= "console.jpg"><br>
+		<span> $589.99 </span>
+		<p>The console still works! still is the same as when the console was made. Great Deal here, so come on and purchase it!</p>
+		
+		Quantity:<input type = "text" id = "Qty3"> <br>
+		
+		<button onclick= "Money()"> Profit and Money</button><br>
+		
+		
+		<input type = "text" id = "Rprice1"> 
+		<input type = "text" id = "Wprice1"><br>
+		<input type = "text" id = "Rprice2">
+		<input type = "text" id = "Wprice2"><br>
+		<input type = "text" id = "Rprice3">
+		<input type = "text" id = "Wprice3"><br>
+		
+		
+		
+		
+		
+		
+		<div id = "output"></div>
+		
+		
+		
+		
+		
+	</div>
+	
+	</body>
+</html>
