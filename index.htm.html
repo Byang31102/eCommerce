@@ -95,7 +95,8 @@ li.dropdown {
 			
 			
 			img {width:300px}
-			input{width:50px}
+			input{width:100px;
+			text-align:left;}
 			h1 {color:red;}
 			body{background-color: yellow;}
 			h2 {color:blue;} 
@@ -153,7 +154,8 @@ function filterFunction() {
 			info += "Tax: " + tax2 +"<br>";
 			info += "Shipping: " + Shipping +"<br>";
 			info += "<hr> " + "<br>";
-			info += "total: " + retail.toFixed(2)+ "<br>";
+			info += "Total: " + retail.toFixed(2)+ "<br>";
+			info += "<br>";
 			info += "Company"+"<hr>";
 			info += "<hr> " + "<br>";
 			info += "Earned: " + Customer.toFixed(2) +"<br>";
@@ -200,37 +202,37 @@ function filterFunction() {
 	<div>
 		<h1> Toyota Camery 2007</h1>
 		<img src= "toyota.jpg"><br>
-		<span>Price:$<input type = "text" id = "Rprice1">  </span>
+		<span>Price:$<input type = "text" id = "Rprice1" placeholder = "Price of car">  </span>
 		<p>A reliable used car. Has gotten better over time. 10 years, hasn't changed a bit. Last deal, hurry!</p>
 		<h2> 50% off until November 10,2017! Get it now!</h2>
 	
-		Quantity:<input type = "text" id = "Qty1"> <br>
+		Quantity:<input type = "text" id = "Qty1"placeholder = "How many?"> <br>
 		
 		
 		<h1> Toy Yoda</h1><br>
 		<img src= "yoda.jpg"><br>
-		<span>Price:$<input type = "text" id = "Rprice2"></span>
-		<p>A well worthed toy that exceeds its value. Will not regret your purchase?</p>
+		<span>Price:$<input type = "text" id = "Rprice2" placeholder = "Price of toy"></span>
+		<p>A well worthed toy that exceeds its value. Will not regret your purchase.Plus, a great way of pranking your friends of you buying them a Toyota!</p>
 		
 		
-		Quantity:<input type = "text" id = "Qty2"> <br>
+		Quantity:<input type = "text" id = "Qty2"placeholder = "How many?"> <br>
 		
 		<h1> Xbox 1</h1><br>
 		<img src= "console.jpg"><br>
-		<span>Price:$<input type = "text" id = "Rprice3"></span>
+		<span>Price:$<input type = "text" id = "Rprice3" placeholder = "Price of console"></span>
 		<p>The console still works! still is the same as when the console was made. Great Deal here, so come on and purchase it!</p>
 		<h2> 15% off until January 10,2018! Get it now!</h2>
 		
-		Quantity:<input type = "text" id = "Qty3"> <br>
+		Quantity:<input type = "text" id = "Qty3"placeholder = "How many?"> <br>
 		
 		<button onclick= "Money()"> Profit and Money</button><br>
 		
 		
 		
-		Cost of Car:$<input type = "text" id = "Wprice1"><br>
+		Cost of car:$<input type = "text" id = "Wprice1" placeholder = "Enter cost of Car?"><br>
 		
-		Cost of toy yoda:$<input type = "text" id = "Wprice2"><br>
-		Cost of Console:$<input type = "text" id = "Wprice3"><br>
+		Cost of toy yoda:$<input type = "text" id = "Wprice2" placeholder = "Enter cost of toy Yoda?"><br>
+		Cost of Console:$<input type = "text" id = "Wprice3" placeholder = "Enter cost of the Console?"><br>
 		
 		
 		
